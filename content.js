@@ -1,0 +1,1 @@
+console.log('Yandex reverse image search extension has access!');

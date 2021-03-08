@@ -1,7 +1,16 @@
 {
   "manifest_version": 3,
   "name": "Yandex reverse image",
-  "version": "1.0",
+  "version": "2021.03",
+        "content_scripts": [
+    {
+	      "all_frames": true,
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
    "background": {
  "service_worker": "background.js"
   },
