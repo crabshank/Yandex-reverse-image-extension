@@ -1,5 +1,11 @@
 try {
-  let contexts = ["image"];
+
+let todo=true;
+
+function handleMessage(request, sender, sendResponse) {
+	
+if(todo){	
+let contexts = ["image"];
 chrome.contextMenus.create({
 	"title": "Yandex reverse image search (similar)",
 	"contexts": contexts,
@@ -11,6 +17,7 @@ chrome.contextMenus.create({
 	"contexts": contexts,
 	"id":"srch"
 });
+
 
 chrome.contextMenus.onClicked.addListener((info,tab) => {
 	if(info.menuItemId=="sim"){
@@ -28,6 +35,12 @@ chrome.contextMenus.onClicked.addListener((info,tab) => {
 	}
 
 });
+todo=false;
+}
+}
+
+chrome.runtime.onMessage.addListener(handleMessage);
+
 } catch (e) {
   console.error(e);
 }

@@ -1,1 +1,1 @@
-console.log('Yandex reverse image search extension has access!');
+chrome.runtime.sendMessage({msg:window.location.href}, function(response){});
