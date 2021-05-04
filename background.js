@@ -39,7 +39,10 @@ todo=false;
 }
 }
 
-chrome.runtime.onMessage.addListener(handleMessage);
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+ handleMessage(request, sender, sendResponse);
+ return true;
+});
 
 } catch (e) {
   console.error(e);
