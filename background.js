@@ -3,7 +3,7 @@ try {
 let todo=true;
 
 function handleMessage(request, sender, sendResponse) {
-	
+			return new Promise((resolve, reject)=>{
 if(todo){	
 let contexts = ["image"];
 chrome.contextMenus.create({
@@ -37,6 +37,8 @@ chrome.contextMenus.onClicked.addListener((info,tab) => {
 });
 todo=false;
 }
+resolve();
+});
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
