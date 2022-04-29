@@ -45,7 +45,6 @@ todo=false;
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	handleMessage(request, sender, sendResponse);
-	Promise.resolve("").then(result => sendResponse(result));
 	return true;
 });
 
