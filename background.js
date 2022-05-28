@@ -45,7 +45,7 @@ todo=false;
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	handleMessage(request, sender, sendResponse);
-	return true;
+	sendResponse({response: "Message received"});
 });
 
 } catch (e) {
